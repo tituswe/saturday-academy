@@ -70,7 +70,7 @@ const Footer = ({ t }: any) => {
 							</Large>
 						</Col>
 						<Col lg={6} md={6} sm={12} xs={12}>
-							<Empty />
+							<Title>{t('Support')}</Title>
 							<Large left="true" to="/">
 								{t('Support Center')}
 							</Large>
