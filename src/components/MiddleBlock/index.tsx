@@ -19,6 +19,7 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
 			block: 'center',
 		});
 	};
+
 	return (
 		<MiddleBlockSection>
 			<Slide direction="up">

@@ -1,6 +1,7 @@
 import { Col, Row } from 'antd';
 import { Fade } from 'react-awesome-reveal';
 import { withTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 import { Button } from '../../../common/Button';
 import { SvgIcon } from '../../../common/SvgIcon';
 import { ContentBlockProps } from '../types';
@@ -26,6 +27,20 @@ const RightBlock = ({
 			block: 'center',
 		});
 	};
+
+	const history = useHistory();
+	const navigateTo = (url: string) => {
+		history.push(url);
+	};
+
+	const goTo = (type: string, id: string) => {
+		if (type === 'scroll') {
+			scrollTo(id);
+		} else if (type === 'navigate') {
+			navigateTo(id);
+		}
+	};
+
 	return (
 		<RightBlockContainer>
 			<Fade direction="right">
@@ -42,7 +57,8 @@ const RightBlock = ({
 												key={id}
 												color={item.color}
 												fixedWidth={true}
-												onClick={() => scrollTo(item.content)}
+												// onClick={() => scrollTo(item.content)}
+												onClick={() => goTo(item.type, item.content)}
 											>
 												{t(item.title)}
 											</Button>

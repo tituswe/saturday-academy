@@ -26,6 +26,7 @@ const TopContentBlock = ({
 			block: 'center',
 		});
 	};
+
 	return (
 		<TopContentSection>
 			<Slide direction="up">
