@@ -40,3 +40,17 @@ export const MinTitle = styled('h6')`
 export const MinPara = styled('p')`
 	font-size: 13px;
 `;
+
+export const ButtonWrapper = styled('div')`
+	display: flex;
+	justify-content: center;
+	max-width: 100%;
+
+	@media screen and (min-width: 1024px) {
+		max-width: 100%;
+	}
+
+	button:last-child {
+		margin-left: 20px;
+	}
+`;

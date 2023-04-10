@@ -1,4 +1,15 @@
 {
 	"title": "Our Curriculum",
-	"text": "In this 1 month bootcamp, we will focus on the fundamental concepts of computer science and programming, using Python as the primary programming language. Through project-based learning, students will learn how to use code to solve mathematical problems, automation concepts, as well as explore the basics of ethical hacking. In the final project, our students will develop their own intelligent algorithm to navigate through a virtual maze. This course will give our students the chance to explore the world of computer science and programming, hone their critical thinking skills, and develop their problem solving abilities."
+	"text": "Through project-based learning, we will focus on the fundamental concepts of computer science and programming, using Python as the primary programming language.",
+	"button": [
+		{
+			"title": "Curriculum",
+			"content": "curriculum"
+		},
+		{
+			"title": "Projects",
+			"content": "projects",
+			"color": "#fff"
+		}
+	]
 }

@@ -30,6 +30,13 @@ const Home = () => {
 				button={MiddleBlockContent.button}
 			/>
 			<ContentBlock
+				type="right"
+				title={MissionContent.title}
+				content={MissionContent.text}
+				icon="product-launch.svg"
+				id="mission"
+			/>
+			<ContentBlock
 				type="left"
 				title={AboutContent.title}
 				content={AboutContent.text}
@@ -39,16 +46,10 @@ const Home = () => {
 			/>
 			<ContentBlock
 				type="right"
-				title={MissionContent.title}
-				content={MissionContent.text}
-				icon="product-launch.svg"
-				id="mission"
-			/>
-			<ContentBlock
-				type="top"
 				title={ProductContent.title}
 				content={ProductContent.text}
-				icon="roadmap.svg"
+				button={ProductContent.button}
+				icon="waving.svg"
 				id="product"
 			/>
 			<Contact
