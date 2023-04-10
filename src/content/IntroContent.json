@@ -3,10 +3,12 @@
 	"text": "We are a passionate team of NUS Computer Science undergraduates dedicated to empowering young minds with programming skills.",
 	"button": [
 		{
-			"title": "Explore"
+			"title": "Explore",
+			"content": "about"
 		},
 		{
 			"title": "Learn more",
+			"content": "product",
 			"color": "#fff"
 		}
 	]

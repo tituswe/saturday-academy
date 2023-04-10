@@ -32,6 +32,7 @@ const Header = ({ t }: any) => {
 			const element = document.getElementById(id) as HTMLDivElement;
 			element.scrollIntoView({
 				behavior: 'smooth',
+				block: 'center',
 			});
 			setVisibility(false);
 		};
