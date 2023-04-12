@@ -1,11 +1,10 @@
 import { lazy, useEffect } from 'react';
-import CurriculumContent from '../../content/CurriculumContent.json';
+import SyllabusContent from '../../content/SyllabusContent.json';
 
 const ContentBlock = lazy(() => import('../../components/ContentBlock'));
 const Container = lazy(() => import('../../common/Container'));
-const ScrollToTop = lazy(() => import('../../common/ScrollToTop'));
 
-const Curriculum = () => {
+const Syllabus = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -14,8 +13,8 @@ const Curriculum = () => {
 		<Container>
 			<ContentBlock
 				type="left"
-				title={CurriculumContent.title}
-				content={CurriculumContent.text}
+				title={SyllabusContent.title}
+				content={SyllabusContent.text}
 				icon="developer.svg"
 				id="intro"
 			/>
@@ -23,4 +22,4 @@ const Curriculum = () => {
 	);
 };
 
-export default Curriculum;
+export default Syllabus;

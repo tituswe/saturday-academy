@@ -2,10 +2,10 @@ import { lazy, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import AboutContent from '../../content/AboutContent.json';
 import ContactContent from '../../content/ContactContent.json';
+import CurriculumContent from '../../content/CurriculumContent.json';
 import IntroContent from '../../content/IntroContent.json';
 import MiddleBlockContent from '../../content/MiddleBlockContent.json';
 import MissionContent from '../../content/MissionContent.json';
-import ProductContent from '../../content/ProductContent.json';
 
 const Contact = lazy(() => import('../../components/ContactForm'));
 const MiddleBlock = lazy(() => import('../../components/MiddleBlock'));
@@ -63,9 +63,9 @@ const Home = () => {
 			/>
 			<ContentBlock
 				type="right"
-				title={ProductContent.title}
-				content={ProductContent.text}
-				button={ProductContent.button}
+				title={CurriculumContent.title}
+				content={CurriculumContent.text}
+				button={CurriculumContent.button}
 				icon="waving.svg"
 				id="curriculum"
 			/>

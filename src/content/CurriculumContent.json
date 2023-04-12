@@ -1,4 +1,17 @@
 {
-	"title": "The Saturday Curriculum",
-	"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+	"title": "Our Curriculum",
+	"text": "Through project-based learning, we will focus on the fundamental concepts of computer science and programming, using Python as the primary programming language.",
+	"button": [
+		{
+			"type": "navigate",
+			"title": "Syllabus",
+			"content": "syllabus"
+		},
+		{
+			"type": "navigate",
+			"title": "Projects",
+			"content": "projects",
+			"color": "#fff"
+		}
+	]
 }
