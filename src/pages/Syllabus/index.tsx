@@ -3,6 +3,9 @@ import SyllabusContent from '../../content/SyllabusContent.json';
 
 const ContentBlock = lazy(() => import('../../components/ContentBlock'));
 const Container = lazy(() => import('../../common/Container'));
+const SyllabusList = lazy(
+	() => import('../../components/Syllabus/SyllabusList')
+);
 
 const Syllabus = () => {
 	useEffect(() => {
@@ -18,6 +21,7 @@ const Syllabus = () => {
 				icon="developer.svg"
 				id="intro"
 			/>
+			<SyllabusList />
 		</Container>
 	);
 };
