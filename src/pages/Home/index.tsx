@@ -1,4 +1,5 @@
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import AboutContent from '../../content/AboutContent.json';
 import ContactContent from '../../content/ContactContent.json';
 import IntroContent from '../../content/IntroContent.json';
@@ -13,6 +14,22 @@ const ScrollToTop = lazy(() => import('../../common/ScrollToTop'));
 const ContentBlock = lazy(() => import('../../components/ContentBlock'));
 
 const Home = () => {
+	const location = useLocation();
+
+	useEffect(() => {
+		const params = new URLSearchParams(location.search);
+		const scrollTo = params.get('scrollTo');
+		if (scrollTo) {
+			window.onload = () => {
+				const element = document.getElementById(scrollTo) as HTMLDivElement;
+				element.scrollIntoView({
+					behavior: 'smooth',
+					block: 'center',
+				});
+			};
+		}
+	}, [location.search]);
+
 	return (
 		<Container>
 			<ScrollToTop />
@@ -27,7 +44,7 @@ const Home = () => {
 			<MiddleBlock
 				title={MiddleBlockContent.title}
 				content={MiddleBlockContent.text}
-				button={MiddleBlockContent.button}
+				id="middle"
 			/>
 			<ContentBlock
 				type="right"
@@ -50,7 +67,7 @@ const Home = () => {
 				content={ProductContent.text}
 				button={ProductContent.button}
 				icon="waving.svg"
-				id="product"
+				id="curriculum"
 			/>
 			<Contact
 				title={ContactContent.title}

@@ -5,12 +5,12 @@
 		{
 			"type": "scroll",
 			"title": "Explore",
-			"content": "about"
+			"content": "middle"
 		},
 		{
 			"type": "scroll",
 			"title": "Learn more",
-			"content": "product",
+			"content": "curriculum",
 			"color": "#fff"
 		}
 	]

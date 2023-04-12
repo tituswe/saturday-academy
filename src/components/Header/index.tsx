@@ -1,6 +1,7 @@
 import { Col, Drawer, Row } from 'antd';
 import { useState } from 'react';
 import { withTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import { Button } from '../../common/Button';
 import Container from '../../common/Container';
 import { SvgIcon } from '../../common/SvgIcon';
@@ -29,13 +30,21 @@ const Header = ({ t }: any) => {
 
 	const MenuItem = () => {
 		const scrollTo = (id: string) => {
-			const element = document.getElementById(id) as HTMLDivElement;
-			element.scrollIntoView({
-				behavior: 'smooth',
-				block: 'center',
-			});
+			const currentUrl = window.location.pathname;
+			if (currentUrl !== '/') {
+				const urlWithQuery = `/?scrollTo=${id}`;
+				window.history.pushState({}, '', urlWithQuery);
+				window.location.reload();
+			} else {
+				const element = document.getElementById(id) as HTMLDivElement;
+				element.scrollIntoView({
+					behavior: 'smooth',
+					block: 'center',
+				});
+			}
 			setVisibility(false);
 		};
+
 		return (
 			<>
 				<CustomNavLinkSmall onClick={() => scrollTo('mission')}>
@@ -44,8 +53,8 @@ const Header = ({ t }: any) => {
 				<CustomNavLinkSmall onClick={() => scrollTo('about')}>
 					<Span>{t('About')}</Span>
 				</CustomNavLinkSmall>
-				<CustomNavLinkSmall onClick={() => scrollTo('product')}>
-					<Span>{t('Product')}</Span>
+				<CustomNavLinkSmall onClick={() => scrollTo('curriculum')}>
+					<Span>{t('Curriculum')}</Span>
 				</CustomNavLinkSmall>
 				<CustomNavLinkSmall
 					style={{ width: '180px' }}
@@ -66,9 +75,11 @@ const Header = ({ t }: any) => {
 					<LogoContainer to="/" aria-label="homepage">
 						<SvgIcon src="logo.svg" width="202px" height="128px" />
 					</LogoContainer>
+					{/* {pathname === '/' && ( */}
 					<NotHidden>
 						<MenuItem />
 					</NotHidden>
+					{/* )} */}
 					<Burger onClick={showDrawer}>
 						<Outline />
 					</Burger>
